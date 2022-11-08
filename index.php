@@ -67,9 +67,10 @@
         $conn = pg_connect($con_string_prime);
         $a = pg_query($conn, "SELECT cadp_codigo, cadp_descricao, cadp_complemento, cadp_codigobarra, cade_prvenda, cade_ctdesembolso, cade_tpemb, cade_qemb
                                 FROM cadprod
+                                INNER JOIN categoriaprod ON cate_codigo = cadp_codcategoria
                                 INNER JOIN cadprodemp ON cade_codigo = cadp_codigo
                                 INNER JOIN empresas ON empr_codigo = cade_codempresa
-                                WHERE empr_cnpjcpf = '$cnpj' AND cadp_dtcadastro = '$data' AND cade_ativo = 'S'
+                                WHERE empr_cnpjcpf = '$cnpj' AND cadp_dtcadastro = '$data' AND cade_ativo = 'S' AND cate_tipo = '00'
                                 ORDER BY cadp_codigo");
         $result = pg_fetch_all($a);
 

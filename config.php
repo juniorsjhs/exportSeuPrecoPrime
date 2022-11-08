@@ -5,5 +5,5 @@
     $usuario = 'postgres';
     $senha = 'postgres';
 
-    $cnpj = '08783547000112';
+    $cnpj = ''; //informar CNPJ da loja
 ?>
