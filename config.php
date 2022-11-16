@@ -4,6 +4,4 @@
     $banco = 'prime';
     $usuario = 'postgres';
     $senha = 'postgres';
-
-    $cnpj = ''; //informar CNPJ da loja
 ?>
