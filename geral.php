@@ -5,7 +5,7 @@
     foreach($empresas as $emp){
         $cnpj = $emp['empr_cnpjcpf']; //echo $cnpj;exit;
 
-        $produtos = GetProdutos($cnpj); print '<pre>';print_r($produtos);exit;
+        $produtos = GetProdutos($cnpj); //print '<pre>';print_r($produtos);exit;
 
         if($produtos != 0){
             EnviaProdutos($produtos, $cnpj);
@@ -14,7 +14,7 @@
 
 
     function EnviaProdutos($produtos, $cnpj){
-        $json = GeraJson($produtos, $cnpj); echo $json;exit;
+        $json = GeraJson($produtos, $cnpj); //echo $json;exit;
         
         $curl = curl_init();
 
