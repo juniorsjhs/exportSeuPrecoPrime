@@ -1,6 +1,7 @@
 <?php 
 
-    $empresas = GetEmpresas(); //print '<pre>';print_r($empresas)exit;
+    $empresas = GetEmpresas(); //print '<pre>'; print_r($empresas);exit; 
+    //exit;
 
     foreach($empresas as $emp){
         $cnpj = $emp['empr_cnpjcpf']; //echo $cnpj;exit;

@@ -5,7 +5,7 @@
     foreach($empresas as $emp){
         $cnpj = $emp['empr_cnpjcpf']; //echo $cnpj;exit;
 
-        $produtos = GetProdutos($cnpj); print '<pre>';print_r($produtos);exit;
+        $produtos = GetProdutos($cnpj); //print '<pre>';print_r($produtos);exit;
 
         if($produtos != 0){
             EnviaProdutos($produtos, $cnpj);
@@ -86,6 +86,21 @@
 
         return $result;
     }
+
+    function GetEmpresas(){
+        $con_string_prime = ConfigConexaoPrime();
+        
+        $conn = pg_connect($con_string_prime);
+        $a = pg_query($conn, "SELECT empr_cnpjcpf FROM empresas");
+        $result = pg_fetch_all($a);
+
+        if(empty($result)){
+            $result = 0;
+        }
+
+        return $result;
+    }
+
 
     function ConfigConexaoPrime(){
         include('config.php');
